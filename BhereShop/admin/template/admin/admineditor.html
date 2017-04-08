@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>主要信息-修改</title>
+    <link rel="stylesheet" href="../public/admin/css/pintuer.css">
+    <link rel="stylesheet" href="../public/admin/css/admin.css">
+    <script src="../public/admin/js/jquery.js"></script>
+    <script src="../public/admin/js/pintuer.js"></script>
+</head>
+<body>
+<div class="panel admin-panel">
+    <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>修改内容</strong></div>
+    <div class="body-content">
+        <form method="post" class="form-x" action="" enctype="multipart/form-data">
+            <div class="form-group">
+                <span class="button border-main" style=" display: block;
+    width: 204px;   margin-left: 80px;">管理员：<!--{$arr[0]['username']}--></span>
+                <div class="field" style="top: 13px;">
+                    <div class="label">
+                        <label>管理员权限：</label>
+                    </div>
+                    <select name="level" id="" class="input w50">
+                        <option value="0" selected>普通管理员</option>
+                        <option value="1">超级管理员</option>
+                    </select>
+                    <input type="hidden" name="id" value="<!--{$arr[0]['id']}-->">
+
+
+
+                    <div class="label">
+                        <label>管理员状态：</label>
+                    </div>
+                    <select name="status" class="input w50">
+                        <!--{if $arr[0]['status']=='1'}-->
+                        <option value="1" selected>启用</option>
+                        <option value="0">停用</option>
+                        <!--{else}-->
+                        <option value="0" selected>停用</option>
+                        <option value="1">启用</option>
+                        <!--{/if}-->
+                    </select>
+                    <div class="tips"></div>
+
+            </div>
+            <div class="clear"></div>
+            <div class="form-group">
+                <div class="label">
+                    <label></label>
+                </div>
+                <div class="field" style="top: 35px;">
+                    <button class="button bg-main icon-check-square-o" type="submit" >修改</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

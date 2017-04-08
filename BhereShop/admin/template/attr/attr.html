@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="renderer" content="webkit">
+<title></title>
+<link rel="stylesheet" href="../public/admin/css/pintuer.css">
+<link rel="stylesheet" href="../public/admin/css/admin.css">
+<script src="../public/admin/js/jquery.js"></script>
+<script src="../public/admin/js/pintuer.js"></script>
+</head>
+<body>
+<!--产品展示内容模块-->
+
+<div class="panel admin-panel">
+  <div class="panel-head"><strong class="icon-reorder"> 商品属性</strong></div>
+  <div class="padding border-bottom">
+  <a class="button border-yellow" href="?c=attr&a=attradd&typeid=<!--{$arr[0]['type_id']}-->" name="spot"><span class="icon-plus-square-o"></span>添加属性</a>
+
+  </div>
+  <table class="table table-hover text-center">
+    <tr >
+      <th width="20%">属性名称</th>
+      <th width="20%">所属类型</th>
+      <th width="45%">操作</th>
+    </tr>
+   <!--{foreach $arr as $value}-->
+    <tr>
+        <td><!--{$value['attr']}--></td>
+        <td><!--{$value['type']}--></td>
+      <td><div class="button-group">
+      <a class="button border-main" href="?c=attr&a=attreditor&id=<!--{$value['id']}-->"><span class="icon-edit"></span> 修改</a>
+      <a class="button border-red" href="javascript:void(0)" onclick="deleteCates(<!--{$value['id']}-->)"><span class="icon-trash-o"></span> 删除</a>
+      </div></td>
+    </tr>
+      <!--{/foreach}-->
+    <tr>
+      <td colspan="5">
+          <!--分页内容部分-->
+          <div class="pagelist">
+              <!--{$str}-->
+          </div>
+      </td>
+      </tr>
+  </table>
+
+</div>
+
+
+<script type="text/javascript">
+    function deleteCates($id){
+        if(confirm("确认删除吗?")){
+            location.href = '?c=attr&a=attrdelete&id='+$id;
+        }else{
+            location.href = '?c=type&a=select&id=';
+        }
+    }
+    function go(){
+        var page = document.getElementById('page');
+        location.href = "?c=attr&a=select&p="+page.value+"#spot";
+    }
+</script>
+</body>
+</html>

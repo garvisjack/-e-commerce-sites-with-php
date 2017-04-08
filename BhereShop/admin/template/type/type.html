@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="renderer" content="webkit">
+<title></title>
+<link rel="stylesheet" href="../public/admin/css/pintuer.css">
+<link rel="stylesheet" href="../public/admin/css/admin.css">
+<script src="../public/admin/js/jquery.js"></script>
+<script src="../public/admin/js/pintuer.js"></script>
+</head>
+<body>
+<!--产品展示内容模块-->
+<a href="#" name="spot"></a>
+<div class="panel admin-panel">
+  <div class="panel-head"><strong class="icon-reorder">BhereShop-商品类型</strong></div>
+   <div class="padding border-bottom">
+      <a href="?c=type&a=addtype" class="button border-yellow" style="font-size:14px;">添加类型</a>
+      <form style="float:right;" action="?c=type&a=like" method="post">
+          <button type="submit" class="button border-main" style="float:right;margin-right:50px"><span class="border-main icon-search"></span> 搜索</button>
+          <input style="float:right;width: 120px;height:30px;" type="text" class="stand-input" value="" name="search"/>
+      </form>
+  </div>
+  <table class="table table-hover text-center">
+    <tr >
+      <th width="15%"><a href="javascript:void(0);" id='spot'>ID</a></th>
+       <th width="30%">类型名称</th>
+        <th width="30%">属性数</th>
+       <th width="55%">操作</th>
+    </tr>
+    <!--{foreach $arr as $key=>$value}-->
+
+    <tr>
+        <td><input type="checkbox" name="id[]" value="<!--{$value['id']}-->"><!--{$value['id']}--></td>
+        <td><!--{$value['type']}--></td>
+        <td><!--{$arrx[$key]}--></td>
+
+      <td><div class="button-group">
+      <a class="button border-green" style="color:#22CC77;" href="?c=attr&a=select&id=<!--{$value['id']}-->"><span class="icon-edit"></span>属性列表</a>
+      <a class="button border-main" href="?c=type&a=editortype&id=<!--{$value['id']}-->"><span class="icon-edit"></span> 修改</a>
+      <a class="button border-red" href="javascript:void(0)" onclick="deleteCates(<!--{$value['id']}-->)"><span class="icon-trash-o"></span> 删除</a>
+      </div></td>
+
+    </tr>
+      <!--{/foreach}-->
+    <tr>
+      <tr>
+          <td style="text-align:left; padding:19px 0;padding-left:20px;"><input type="checkbox" id="checkall"/>
+              全选 </td>
+          <td colspan="7" style="text-align:left;padding-left:20px;"><a href="javascript:void(0)" class="button border-red icon-trash-o"  onclick="DelSelect()">删除</a> <a href="javascript:void(0)" class="button border-blue icon-edit" onclick="sorts()"> 排序</a></td>
+      </tr>
+      <td colspan="5">
+
+      <div class="pagelist">
+
+      </div>
+      </td>
+      </tr>
+  </table>
+    <div class="pagelist">
+        <!--{$str}-->
+    </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+    function deleteCates($id){
+        if(confirm("确认删除吗?")){
+            location.href = '?c=type&a=deletetype&id='+$id;
+        }else{
+            location.href = '?c=type&a=select';
+        }
+    }
+    function go(){
+        var page = document.getElementById('page');//取到类里面的input
+        location.href = "?c=type&a=select&p="+page.value+"#spot";//输入的页数就是所跳转的页数 加锚点
+
+    }
+    $("#checkall").click(function(){
+        $("input[name='id[]']").each(function(){
+            if (this.checked) {//如果没被选中 则全部选 如果选中了就全部取消
+                this.checked = false;//
+            }
+            else {
+                this.checked = true;
+            }
+        });
+    })
+     function DelSelect(){
+       if(confirm('确认将所选的删除吗？')) {
+           var delarr =[];
+           $("input[name='id[]'").each(function(){
+               if(this.checked){
+                  delarr.push($(this).val())
+               }
+           })
+
+           $.getJSON("?c=type&a=deletes",{id:delarr},function(msq){
+                       if(msq==0){
+                           alert('分类里有属性 无法删除！')
+                       }else{
+                           location.href="?c=type&a=select";
+                       }
+           })
+       }
+     }
+</script>
+</body>
+</html>

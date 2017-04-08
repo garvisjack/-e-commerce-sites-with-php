@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>主要信息-修改</title>
+    <link rel="stylesheet" href="../public/admin/css/pintuer.css">
+    <link rel="stylesheet" href="../public/admin/css/admin.css">
+    <script src="../public/admin/js/jquery.js"></script>
+    <script src="../public/admin/js/pintuer.js"></script>
+</head>
+<body>
+<div class="panel admin-panel">
+    <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>修改内容</strong></div>
+    <div class="body-content">
+        <form method="post" class="form-x" action="" enctype="multipart/form-data" onsubmit="return checkform()">
+            <div class="form-group">
+                <div class="label">
+                    <label>会员等级：</label>
+                </div>
+                <div class="field">
+                    <select name='level' class='stand-input'>
+                        <!--{foreach $arrl as $value}-->
+                        <!--{if $value==$arr[0]['level']}-->
+                        <option value="<!--{$value}-->" selected><!--{$value}--></option>
+                        <!--{else}-->
+                        <option value="<!--{$value}-->"><!--{$value}--></option>
+                        <!--{/if}-->
+                        <!--{/foreach}-->
+                    </select>
+                    <input type="hidden" name="id" value="<!--{$arr[0]['id']}-->"/>
+                    <div class="tips"></div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>到期时间：</label>
+                    </div>
+                    <div class="field">
+                        <!--下拉菜单部分-->
+
+                        <select name='expyear' class='w30' id="1">
+                            <!--{foreach $arry as $value}-->
+                            <!--{if $value==$arr[0]['year']}-->
+                            <option value="<!--{$value}-->" selected><!--{$value}--></option>
+                            <!--{else}-->
+                            <option value="<!--{$value}-->"><!--{$value}--></option>
+                            <!--{/if}-->
+                            <!--{/foreach}-->
+                        </select>
+                        <span class="button bg-red">年</span>
+                        <select name='expmonth' class='w20' id="2">
+                            <!--{foreach $arrm as $value}-->
+                            <!--{if $value==$arr[0]['month']}-->
+                            <option value="<!--{$value}-->" selected><!--{$value}--></option>
+                            <!--{else}-->
+                            <option value="<!--{$value}-->"><!--{$value}--></option>
+                            <!--{/if}-->
+                            <!--{/foreach}-->
+                        </select>
+                        <span class="button bg-yellow">月</span>
+                        <select name='expday' class='w20' id="3">
+                            <!--{foreach $arrd as $value}-->
+                            <!--{if $value==$arr[0]['day']}-->
+                            <option value="<!--{$value}-->" selected><!--{$value}--></option>
+                            <!--{else}-->
+                            <option value="<!--{$value}-->"><!--{$value}--></option>
+                            <!--{/if}-->
+                            <!--{/foreach}-->
+                        </select>
+                        <span class="button bg-green">日</span>
+                        <select name='exphour' class='w20'id="4">
+                            <!--{foreach $arrh as $value}-->
+                            <!--{if $value==$arr[0]['hour']}-->
+                            <option value="<!--{$value}-->" selected><!--{$value}--></option>
+                            <!--{else}-->
+                            <option value="<!--{$value}-->"><!--{$value}--></option>
+                            <!--{/if}-->
+                            <!--{/foreach}-->
+                        </select>
+                        <span class="button bg-red">时</span>
+                        <select name='expmin' class='w20' id="5">
+                            <!--{foreach $arrn as $value}-->
+                            <!--{if $value==$arr[0]['min']}-->
+                            <option value="<!--{$value}-->" selected><!--{$value}--></option>
+                            <!--{else}-->
+                            <option value="<!--{$value}-->"><!--{$value}--></option>
+                            <!--{/if}-->
+                            <!--{/foreach}-->
+                        </select>
+                        <span class="button bg-yellow">分</span>
+                        <select name='expsec' class='w20' id="6">
+                            <!--{foreach $arrs as $value}-->
+                            <!--{if $value==$arr[0]['sec']}-->
+                            <option value="<!--{$value}-->" selected><!--{$value}--></option>
+                            <!--{else}-->
+                            <option value="<!--{$value}-->"><!--{$value}--></option>
+                            <!--{/if}-->
+                            <!--{/foreach}-->
+                        </select>
+                        <span class="button bg-green">秒</span>
+                        <span class=""  id="tips" style="display:none"></span>
+                        <span class=""  id="tips1" style="display:none"></span>
+                        <div class="tips"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="form-group">
+                <div class="label">
+                    <label></label>
+                </div>
+                <div class="field">
+                    <button class="button bg-main icon-check-square-o" type="submit">修改</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../public/admin/js/jquery.js" type="text/javascript"></script>
+<script>
+       var booldata = false;
+        $(".field>select").change(function(){
+            var year = $("#1").val();
+            var month = $("#2").val();
+            var date = $("#3").val();
+            var hour = $("#4").val();
+            var min = $("#5").val();
+            var sec = $("#6").val();
+
+          //判断平闰年
+           if(year%4==0&&year%100!=0){//闰年
+               if(month==2&&date>29){//判断2月份天数
+                   $("#tips").animate({width:"200px",height:"30px"},300).text('闰年2月份只有29天')
+                   booldata = false;
+               }else{
+                   $("#tips").animate({width:"200px",height:"30px"},500).text('填写正确').attr("class","button bg-green")
+                   booldata = true
+               }
+
+           }else{
+               if(month==2&&date>28){
+                   $("#tips").animate({width:"200px",height:"30px"},500).text('平年2月份只有28天').attr("class","button bg-red")
+                   booldata = false;
+
+               }else{
+                   $("#tips").animate({width:"200px",height:"30px"},500).text('填写正确').attr("class","button bg-green")
+                   booldata = true
+               }
+
+           }
+            arr=[2,4,6,9,11];//小月
+              for(var i =1;i<arr.length;i++){//判断小月是否有31天
+                  if(month==arr[i]){
+                     if(date>30){
+                         $("#tips1").animate({width:"200px",height:"30px"},500).text('该月份没有这个天数').attr("class","button bg-red")
+
+                         booldata = false;
+                         break
+                     }else{
+                         $("#tips1").animate({width:"200px",height:"30px"},500).text('填写正确').attr("class","button bg-green")
+
+                         booldata = true;
+                         break
+                     }
+                  }
+              }
+        })
+            function checkform(){
+                 var check
+                if(booldata==false){
+                    check = false;
+                    alert('填写的内容不正确');
+                    return check;
+                }else{
+                    check=true;
+                    return check;
+                }
+            }
+</script>
+</body>
+</html>

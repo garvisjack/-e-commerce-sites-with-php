@@ -1,0 +1,415 @@
+<?php
+/* Smarty version 3.1.30, created on 2017-04-01 17:19:31
+  from "/usr/lamp/apache2/htdocs/template/pi/safe.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_58df70a39d8bd0_38694332',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'a35d2eb50c83e29812a59d24a1635f9307907ac1' => 
+    array (
+      0 => '/usr/lamp/apache2/htdocs/template/pi/safe.html',
+      1 => 1491038365,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_58df70a39d8bd0_38694332 (Smarty_Internal_Template $_smarty_tpl) {
+?>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Bhereshop个人中心</title>
+		<?php echo '<script'; ?>
+ type="text/javascript" src="./public/js/pi/safe/aywmq_qt.js" ><?php echo '</script'; ?>
+>
+		<?php echo '<script'; ?>
+ type="text/javascript" src="./public/js/pi/safe/da_opt.js" ><?php echo '</script'; ?>
+>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="stylesheet" href="./public/css/pi/safe/css.css" />
+		<link rel="stylesheet" href="./public/css/pi/safe/common.min.css" />
+		<link rel="stylesheet" href="./public/css/pi/safe/ms-style.min.css" />
+		<link rel="stylesheet" href="./public/css/pi/safe/personal_member.min.css" />
+		<link rel="stylesheet" href="./public/css/pi/safe/Snaddress.min.css" />
+		<link rel="stylesheet" href="./public/css/pi/css.css" />
+		<style>
+			progress {
+		    width: 300px;
+		    border: 1px solid #ffffff;  
+		    background-color:#e6e6e6;
+		    color: #0064B4; /*IE10*/
+					}
+			progress::-moz-progress-bar { background: #FFFFFF; }
+			progress::-webkit-progress-bar { background: #ccc; }
+			progress::-webkit-progress-value  { background: #FF7700; }
+	</style>
+	</head>
+	<body class="ms-body">
+		<div id="" class="ng-top-banner"></div>
+		<div class="ng-toolbar">
+		<!--顶部导航的位置-->
+				
+        <div id="menu">
+            <ul>
+                <li><a href="?c=index&a=index">WELCOME BHERESHOP</a>
+                    <div>
+                        <ul>
+                            <li><a href="?c=lr&a=select">新用户注册</a></li>
+                            <li><a href="default.htm">一键登录Bhere</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="?c=pi&a=index">个人中心</a>
+                    <div>
+                        <ul>
+                            <li><a href="default.htm">已买到的商品</a></li>
+                            <li><a href="default.htm">个性化设置</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="categories.html">收藏夹</a>
+                    <div>
+                        <ul>
+                            <li><a href="default.htm">收藏的商品</a></li>
+                            <li><a href="default.htm">收藏的店铺</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="categories.html">卖家中心</a>
+                    <div>
+                        <ul>
+                            <li><a href="default.htm">免费开店</a></li>
+                            <li><a href="default.htm">已经卖出的商品</a></li>
+                            <li><a href="default.htm">出售中的商品</a></li>
+                            <li><a href="default.htm">卖家服务中心</a></li>
+                            <li><a href="default.htm">体验培训中心</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="categories.html">联系客服</a>
+                    <div>
+                        <ul>
+                            <li><a href="default.htm">消费者客服</a></li>
+                            <li><a href="default.htm">卖家客服</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#" style='color:#EA2F2F'>欢迎!<?php echo $_smarty_tpl->tpl_vars['user']->value;?>
+</a></li>
+                <li><a href="?c=car&a=show" style='color:#EA2F2F'>我的购物车</a></li>
+                <li><a href="?c=lr&a=logout" style='color:#EA2F2F'>退出登录</a>
+                </ul>
+        </div>
+    </div>
+
+				</div>
+		</div>
+		<header class="ms-header ms-header-inner ms-head-position">
+			<article class="ms-header-menu">
+				<style type="text/css">
+					.nav-manage .list-nav-manage {
+						position: absolute;
+						padding: 15px 4px 10px 15px;
+						left: 0;
+						top: -15px;
+						width: 90px;
+						background: #FFF;
+						box-shadow: 1px 1px 2px #e3e3e3, -1px 1px 2px #e3e3e3;
+						z-index: 10;
+					}
+					
+					.ms-nav li {
+						float: left;
+						position: relative;
+						padding: 0 20px;
+						height: 44px;
+						font: 14px/26px "Microsoft YaHei";
+						color: #FFF;
+						cursor: pointer;
+						z-index: 10;
+					}
+				</style>
+				<div class="header-menu">
+				<div class="ms-logo">
+						<a class="ms-head-logo" name="Myyigou_index_none_daohangLogo"><span style="font-size: 30px;color: #e33131;font-weight: bold; line-height: 28px;;">B</span><span style="font-size: 30px;color: #e55155;font-weight: bold; line-height: 28px;;">here</span></a>
+
+					</div>
+					<nav class="ms-nav">
+						<ul>
+							<li class=""><a href="" data-url="" >首页</a><i class="nav-arrow"></i></li>
+							<li class="nav-manage selected">
+								<a href="" data-url="" >账户管理<em></em></a><i class="nav-arrow"></i>
+								<div class="list-nav-manage " style='display: none'>
+									<p class="nav-mge-hover">账户管理<em></em></p>
+									<p><a href="个人中心首页.html">个人资料</a></p>
+									<p><a  href="安全设置-01.html">安全设置</a></p>
+									<p><a href="账号绑定.html">账号绑定</a></p>
+									<p><a href="地址管理.html">地址管理</a></p>
+								</div>
+							</li>
+							<li class="ms-nav-msg"><a >消息</a><i class="nav-arrow"></i></li>
+						</ul>
+						<div class="ms-search">
+							<form >
+								<input id="" type="text" value="">
+									<a id="" href=""></a>
+							</form>
+						</div>
+					</nav>
+				</div>
+
+			</article>
+
+			<article class="ms-useinfo">
+				<div class="header-useinfo" id="">
+					<div class="ms-avatar">
+						<div class="useinfo-avatar">
+							<img width="60" height="60" src=" <?php echo $_smarty_tpl->tpl_vars['safe']->value[0]['image'];?>
+">
+							<div class="edit-avatar"></div>
+							<a class="text-edit-avatar" >修改</a>
+						</div>
+						<a ><?php echo $_smarty_tpl->tpl_vars['safe']->value[0]['username'];?>
+</a>
+					</div>
+
+					<div class="ms-name-info">
+						<div class="link-myinfo">
+							<a ></a>
+						</div>
+						<div class="info-member">
+							<span class="name-member member-1">
+        				 <i></i><a target="_blank" >注册会员</a></span>
+        				 <span style="margin-left: 20px;">
+        				 <a target="_blank" >我的资料</a></span>
+						</div>
+						<div class="info-safety">
+							<span class="safety-lv lv-3">
+        				<a >会员等级：
+                            <?php if ($_smarty_tpl->tpl_vars['safe']->value[0]['level'] == 0) {?>
+                            <span>普通会员</span>
+                            <?php } else { ?>
+                            <span style="color:#e33131;">VIP会员</span>
+                            <?php }?>
+                        </a>
+							</span>
+							<a class="bind-phone" href="?c=pi&a=cmb1">
+								<i style="background-image: url(./public/img/pi/修改手机.png);"></i>修改手机</a>
+							<a class="bind-email" href="?c=pi&a=cp1">
+								<i style="background-image: url(./public/img/pi/绑定邮箱.png);"></i>修改密码</a>
+							<a  class="manage-addr" ><i style="background-image: url(./public/img/pi/地址管理.png);"></i>地址管理</a>
+						</div>
+					</div>
+				</div>
+
+			</article>
+		</header>
+		<div id="ms-center" class="personal-member">
+			<div class="cont">
+				<div class="cont-side">
+					<div class="side-neck">
+						<i></i>
+					</div>
+					<div class="ms-side">
+						<article class="side-menu side-menu-off">
+                            <dl class="side-menu-tree" style="padding-left: 50px;">
+                                <dt><img src="./public/img/pi/left/我的买啦.png"  style="margin-right: 10px;margin-left: -20px;"/><a href='?c=pi&a=index'>个人中心</a></dt>
+                                <dd>
+                                <dt><img src="./public/img/pi/left/我的购物车.png"  style="margin-right: 10px;margin-left: -20px;"/>我的购物车</dt>
+                                <dt><img src="./public/img/pi/left/file.png"  style="margin-right: 10px;margin-left: -20px;"/>订单管理</dt>
+                                	<dd>
+																		<a href="?c=pi&a=unsend">待收货</a>
+																	</dd>	
+                                
+                                <dd>
+                                    <a href="?c=pi&a=order">购买记录</a>
+
+                                </dd>
+                                <dd>
+                                    <a href="?c=pi&a=comment">我的评价</a>
+
+                                </dd>
+
+                                <dt><img src="./public/img/pi/left/file.png"  style="margin-right: 10px;margin-left: -20px;"/>账户管理</dt>
+                                <dd>
+                                    <a href="?c=pi&a=myinfo">我的资料</a>
+
+                                </dd>
+                                <dd>
+                                    <a href="?c=pi&a=safe">安全设置</a>
+
+                                </dd>
+                                <dd>
+                                    <a href="?c=pi&a=bindacc">帐号绑定</a>
+
+                                </dd>
+                               
+                                <dt><img src="./public/img/pi/left/我的买啦.png"  style="margin-right: 10px;margin-left: -20px;"/>我的Bhere</dt>
+                                 <dd>
+                                    <a href="?c=pi&a=address">收货地址管理</a>
+
+                                </dd>
+                                <dd>
+                                    <a href="?c=pi&a=mymoney">我的钱包</a>
+
+                                </dd>
+                                <dt><img src="./public/img/pi/left/v-card-3.png"  style="margin-right: 10px;margin-left: -20px;"/>售后服务</dt>
+                                <dd>
+                                    <a href="?c=pi&a=rg">退换货</a>
+
+                                </dd>
+                                <dd>
+                                    <a href="#">意见/投诉</a>
+
+                                </dd>
+                            </dl>
+
+
+                            <a ison="on" class="switch-side-menu icon-up-side"><i></i></a>
+						</article>
+					</div>
+				</div>
+				<div class="cont-main">
+					<div class="main-wrap mt15">
+						<!--<h3>
+	                        <strong>个人信息</strong>
+	                    </h3>-->
+						<div class="user-profile clearfix">
+							<div class="user-profile-wrap">
+								<h2>您的基础信息</h2>
+								<div class="control-group clearfix " style="margin-top: 20px;margin-left: 20px;">
+									<div class="controls lh26">
+										<font style="font-weight: bold;">会&nbsp;员&nbsp;名<span style="margin-left: 7px;" >：</span></font><?php echo $_smarty_tpl->tpl_vars['safe']->value[0]['username'];?>
+
+									</div>
+									<br />
+									<div class="controls lh26" style="width: 320px;">
+								<font style="font-weight: bold;">登录邮箱：</font><span><?php echo $_smarty_tpl->tpl_vars['safe']->value[0]['email'];?>
+</span><font style="color: #2D5BC1;float: right;"></font>
+									</div>
+									<br />
+									<div class="controls lh26" style="width: 320px;">
+										<font style="font-weight: bold;">绑定手机：</font><?php echo $_smarty_tpl->tpl_vars['safe']->value[0]['mobile'];?>
+<font style="color: #2D5BC1;float: right;"><a href="?c=pi&a=cmb1">修改手机</a></font>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+						<input id="" type="hidden">
+						<div class="form-list tab-switch personal-wrap-show">
+							<form>
+								<div class="control-group clearfix">
+									<h2 style="margin-left: 66px;">您的安全服务</h2>
+								</div>
+
+								<div class="control-group clearfix"style="margin-top: 54px;width: 920px;" >
+									<label style="margin-left: 87px;">密码登录</label>
+									<span style="margin-left: 74px;">已设置 <img  src="./public/img/pi/ysz.png" style="margin-left: 5px;    margin-bottom: -4px;"/></span>
+									<div style="margin-left: 369px;margin-top: -20px;width:500px;float: left">安全性高的密码可以使账户更安全,建议您定期更换密码,且设置一个包含数字<br>母,并长度超过6位以上的密码。</div>
+									<div style="float: right;margin-top: -20px;color: #007AFF;"><a href="?c=pi&a=cp1" style="color: #007AFF;">修改</a></div>
+								</div>
+								<div style="border-bottom: 1px dashed #ccc;width:850px;margin-left:87px"></div>
+								<div class="control-group clearfix"  style="margin-top: 40px;width: 920px;">
+									<label style="margin-left: 87px;">支付密码</label>
+									<span  style="margin-left: 74px;color: #8e8e8e;">未设置</span>
+									<div style="margin-left: 369px;margin-top: -20px;width:500px;float: left;color: #8e8e8e;font-size: 12px;">在账户资金变动,修改账户信息时需要输入的密码。<br>&nbsp;</div>
+									<div style="float: right;margin-top: -20px;color: #F88600;"></div>
+								</div>
+								<div style="border-bottom: 1px dashed #ccc;width:850px;margin-left:87px"></div>
+								<div class="control-group clearfix" style="margin-top: 40px;width: 920px;">
+									<label style="margin-left: 87px;">实名认证</label>
+									<span  style="margin-left: 74px;color: #8e8e8e;">未认证 </span>
+									<div style="margin-left: 369px;margin-top: -20px;width:500px;float: left;color: #8e8e8e;">进行实名认证,可提高账户安全度。<br>&nbsp;</div>
+									<div style="float: right;margin-top: -20px;color: #F88600;"></div>
+								</div>
+								<div style="border-bottom: 1px dashed #ccc;width:850px;margin-left:87px"></div>
+
+								<div class="control-group clearfix" style="margin-top: 40px;width: 920px;">
+									<label style="margin-left: 87px;">手机号码</label>
+                                    <?php if ($_smarty_tpl->tpl_vars['safe']->value[0]['mobile'] == null) {?>
+                                    <span  style="margin-left: 74px;">未绑定</span>
+                                    <?php } else { ?>
+									<span  style="margin-left: 74px;">已绑定 <img  src="./public/img/pi/ysz.png" style="margin-left: 5px;    margin-bottom: -4px;"/></span>
+                                    <?php }?>
+									<div style="margin-left: 369px;margin-top: -20px;width:500px;float: left">绑定手机后，您即可享受Bhere丰富的手机服务，如手机找回密码等。<br>&nbsp;</div>
+									<div style="float: right;margin-top: -20px;color: #007AFF;"><a href="?c=pi&a=cmb1" style="color: #007AFF;">修改</a></div>
+								</div>
+								<div style="border-bottom: 1px dashed #ccc;width:850px;margin-left:87px"></div>
+								<div class="control-group clearfix"  style="margin-top: 40px;width: 920px;">
+									<label style="margin-left: 87px;">银行卡</label>
+									<span  style="margin-left: 86px;">未绑定</span>
+									<div style="margin-left:369px;margin-top: -20px;width:475px;float: left">您已绑定&nbsp;&nbsp;<font color="#22CD6E">0</font>&nbsp;&nbsp;张银行卡<br>&nbsp;</div>
+									<div style="float: right;margin-top: -20px;color: #007AFF;"></div>
+								</div>
+								<!--<div style="border-bottom: 1px dashed #ccc;width:850px;margin-left:87px"></div>-->
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div class="ng-footer">
+
+			<textarea class="footer-dom" id="footer-dom-02">
+			</textarea>
+			<div class="ng-fix-bar"></div>
+		</div>
+		<style type="text/css">
+			.ng-footer {
+				height: 130px;
+				margin-top: 0;
+			}
+			
+			.ng-s-footer {
+				height: 130px;
+				background: none;
+				text-align: center;
+			}
+			
+			.ng-s-footer p.ng-url-list {
+				height: 25px;
+				line-height: 25px;
+			}
+			
+			.ng-s-footer p.ng-url-list a {
+				color: #666666;
+			}
+			
+			.ng-s-footer p.ng-url-list a:hover {
+				color: #f60;
+			}
+			
+			.ng-s-footer .ng-authentication {
+				float: none;
+				margin: 0 auto;
+				height: 25px;
+				width: 990px;
+				margin-top: 5px;
+			}
+			
+			.ng-s-footer p.ng-copyright {
+				float: none;
+				width: 100%;
+			}
+			
+			.root1200 .ng-s-footer p.ng-copyright {
+				width: 100%;
+			}
+		</style>
+		<?php echo '<script'; ?>
+ type="text/javascript" src="./public/js/pi/safe/ms_common.min.js" ><?php echo '</script'; ?>
+>
+	</body>
+
+</html><?php }
+}

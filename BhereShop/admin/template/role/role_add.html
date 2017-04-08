@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title></title>
+    <link rel="stylesheet" href="../public/admin/css/pintuer.css">
+    <link rel="stylesheet" href="../public/admin/css/admin.css">
+    <script src="../public/admin/js/jquery.js"></script>
+    <script src="../public/admin/js/pintuer.js"></script>
+</head>
+<body>
+<div class="panel admin-panel">
+  <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>BhereShop-增加角色</strong></div>
+  <div class="body-content">
+
+    <form method="post" class="form-x" action="?c=role&a=add">
+      <div class="form-group">
+        <div class="label">
+          <label>角色名称：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="stand-input" value="" name="name" data-validate="required:请输入角色名称" />
+          <div class="tips"></div>
+        </div>
+      </div>
+
+
+        <div class="form-group">
+            <div class="label">
+                <label>角色描述：</label>
+            </div>
+            <div class="field">
+                <textarea name="descr" class="stand-input" data-validate="required:请输入角色描述" style="height:100px"></textarea>
+                <div class="tips"></div>
+            </div>
+        </div>
+        <table class="table table-hover text-center">
+            <dl>
+                <!--{foreach $arry as $value}-->
+                <!--{if $value['pid'] eq 1}-->
+                <dt style="float: left;">
+                    <input type="checkbox" name="nodeid[]" id="checkall" value="<!--{$value['id']}-->" checked/><!--{$value['name']}-->
+                <dd>
+                    <!--{foreach $arry as $val}-->
+                    <!--{if $val['pid'] eq $value['id']}-->
+                    <input type="checkbox" name="nodeid[]" class="checka22" value="<!--{$val['id']}-->" <!--{$arrx|biabli:$val['id']}-->/><!--{$val['name']}-->
+                    <!--{/if}-->
+                    <!--{/foreach}-->
+                </dd>
+                </dt>
+                <!--{/if}-->
+                <!--{/foreach}-->
+            </dl>
+        </table>
+        <input type="hidden" name="roleid" value="" />
+        <div class="form-group">
+        <div class="label">
+          <label></label>
+        </div>
+        <div class="field">
+          <input type="submit" name="submit" value="提交" class="button bg-main icon-check-square-o">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script type="text/javascript">
+    //全选
+    $("#checkall").click(function(){
+        <!--{foreach $arry as $value}-->
+            <!--{foreach $arry as $val}-->
+                <!--{if $val['pid'] eq $value['id']}-->
+                    <!--{foreach $arry as $v}-->
+                        <!--{if $v['pid'] eq $val['id']}-->
+                        $("input[class='checka22']").each(function(){
+                            if(this.checked){
+                                this.checked = false;
+                            }
+                            else {
+                                this.checked = true;
+                            }
+                        });
+                        <!--{/if}-->
+                     <!--{/foreach}-->
+                <!--{/if}-->
+            <!--{/foreach}-->
+        <!--{/foreach}-->
+    });
+
+
+
+</script>
+</body>
+</html>

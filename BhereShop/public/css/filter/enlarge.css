@@ -1,0 +1,37 @@
+			#left{
+					width: 200px;
+					height: 200px;
+					border:1px solid #000000;
+					position: relative;
+					top: 300px;
+					z-index: 1;
+				}
+				#left_zzc{
+					width: 50px;
+					height: 50px;
+					border:1px solid #000000;
+					background: #234567;
+					position: absolute;
+					display:none;
+					opacity: 0.3;
+					top:75px;
+					left: 75px;
+					z-index: 2;
+					
+				}
+				#right{
+					width: 400px;
+					height: 400px;
+					border:1px solid #000000;
+					position: absolute;
+					top: 300px;
+					left: 220px;
+					overflow: hidden;
+					display:none;
+				
+				}
+				#right img{
+					position:absolute;
+
+				}
+

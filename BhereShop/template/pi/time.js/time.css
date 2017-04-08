@@ -1,0 +1,37 @@
+input{
+    outline: none;
+}
+a{text-decoration: none;}
+.timeData{
+    width: 150px;
+    height: 128px;
+    position: absolute;
+    left: 0;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    font-family: "Segoe UI",Helvetica, Arial, sans-serif;
+    border: 1px solid #ddd;
+}
+.timeData >div{
+    width: 33.33%;
+    float: left;
+    height: 128px;
+}
+.timeData >div >a{display: block;width: 80%;padding: 10px 10% 10px;text-align: center;color: #C0A16B;transition: all 0.3s;}
+.timeData >div >a:hover{background: #C0A16B;color: #fff;}
+.timeData >div >input{outline: none;width: 80%;height: 30px;display: block;margin: 10px auto 10px;line-height: 30px;text-align: center;color: #000;}
+.timeData >span{display: none;text-indent: 4px;color: #C9302C;font-size: 13px;position: absolute;left: 0;top: 132px;}
+/*三角*/
+.timeData:after{
+    border-bottom: 6px solid #CCCCCC;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    content: "";
+    left: 7px;
+    position: absolute;
+    top: -6px;
+}
+.year,.month,.day{
+    background:#cccccc;
+}
+

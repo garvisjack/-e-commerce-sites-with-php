@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title></title>
+    <link rel="stylesheet" href="../public/admin/css/pintuer.css">
+    <link rel="stylesheet" href="../public/admin/css/admin.css">
+    <script src="../public/admin/js/jquery.js"></script>
+    <script src="../public/admin/js/pintuer.js"></script>
+</head>
+<body>
+<div class="panel admin-panel">
+  <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>BhereShop-分配权限</strong></div>
+  <div class="body-content">
+
+    <form method="post" class="form-x" action="?c=role&a=distribution">
+      <div class="form-group">
+        <div class="">
+          <h3>角色名称：<!--{$arr[0]['name']}--></h3>
+        </div>
+      </div>
+
+        <table class="table table-hover text-center">
+            <!--{foreach $arrx as $value}-->
+            <tr>
+                <td style="text-align:left; padding-left:20px;"><input type="checkbox" name="nodeid[]" value="<!--{$value['id']}-->" /><!--{$value['name']}--></td>
+                <td><!--{foreach $arry as $v}-->
+                     <!--{if $v['pid'] eq $value['id']}-->
+                    <input type="checkbox" name="nodeid[]" value="<!--{$v['id']}-->" />
+                            <!--{$v['name']}-->
+                        <!--{/if}-->
+                    <!--{/foreach}-->
+                </td>
+                <!--{foreach $arrz as $va}-->
+                <!--{if $va['pid'] eq $v['id']}-->
+                <input type="checkbox" name="nodeid[]" value="<!--{$va['id']}-->" />
+                <!--{$va['name']}-->
+                <!--{/if}-->
+                <!--{/foreach}-->
+
+            </tr>
+            <!--{/foreach}-->
+        </table>
+
+        <input type="hidden" name="roleid" value="<!--{$arr[0]['id']}-->" />
+        <div class="form-group">
+            <div class="label">
+              <label></label>
+            </div>
+        <div class="field">
+
+          <input type="submit" name="submit" value="提交" class="button bg-main icon-check-square-o">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+</body></html>
